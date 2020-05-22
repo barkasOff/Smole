@@ -23,6 +23,9 @@ namespace Smole
         public MainWindow()
         {
             InitializeComponent();
+
+            // Add datacontext
+            DataContext = new WindowViewModel(this);
         }
     }
 }

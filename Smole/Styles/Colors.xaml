@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Smole">
+    
+    <!-- Colors of the app -->
+    <Color x:Key="LightColor">#e8e8e8</Color>
+    <SolidColorBrush x:Key="LightBrush" Color="{StaticResource LightColor}"/>
+
+    <Color x:Key="MoreLightColor">#d1d1d1</Color>
+    <SolidColorBrush x:Key="MoreLightBrush" Color="{StaticResource MoreLightColor}"/>
+
+    <Color x:Key="MoreMoreLightColor">#c4c4c4</Color>
+    <SolidColorBrush x:Key="MoreMoreLightBrush" Color="{StaticResource MoreMoreLightColor}"/>
+
+    <Color x:Key="OrangeColor">#ffaa00</Color>
+    <SolidColorBrush x:Key="OrangeBrush" Color="{StaticResource OrangeColor}"/>
+    
+    <Color x:Key="Red">#ff4747</Color>
+    <SolidColorBrush x:Key="RedBrush" Color="{StaticResource Red}" />
+
+    <Color x:Key="Green">#00c541</Color>
+    <SolidColorBrush x:Key="GreenBrush" Color="{StaticResource Green}" />
+    
+    <Color x:Key="CloseRedColor">#eb4034</Color>
+    <SolidColorBrush x:Key="CloseRedBrush" Color="{StaticResource CloseRedColor}"/>
+
+</ResourceDictionary>

@@ -5,10 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Smole"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    
-    <Grid>
+        
+        x:Name="AppWindow"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        
+        Icon="/Images/Icons/AppIcon.ico"
+        Title="borovNetwork"
+        
+        Height="600" Width="800"
+        MinHeight="{Binding WindowMinimumHeight}" 
+        MinWidth="{Binding WindowMinimumWidth}">
 
-    </Grid>
-    
+    <!-- For Base Window Capabilities -->
+    <WindowChrome.WindowChrome>
+
+        <WindowChrome 
+            ResizeBorderThickness="{Binding ResizeBorderThickness}"
+            CaptionHeight="{Binding TitleHeight}"
+            CornerRadius="0"
+            GlassFrameThickness="0"/>
+
+    </WindowChrome.WindowChrome>
+
+    <!-- Main Border of the app -->
+    <Border>
+
+        <!-- Main Content -->
+        <Grid>
+
+            <Button Content="Test"/>
+
+        </Grid>
+
+    </Border>
+
 </Window>

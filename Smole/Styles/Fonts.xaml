@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Smole"
+                    xmlns:system="clr-namespace:System;assembly=System.Runtime">
+    
+    <!-- All Fonts of the app -->
+    <system:Double x:Key="SmallFont">12</system:Double>
+    <system:Double x:Key="RegularFont">16</system:Double>
+    <system:Double x:Key="MoreRegularFont">18</system:Double>
+    <system:Double x:Key="LessLargeFont">22</system:Double>
+    <system:Double x:Key="LargeFont">24</system:Double>
+    <system:Double x:Key="LargeMoreFont">26</system:Double>
+    <system:Double x:Key="TheLargestFont">40</system:Double>
+
+</ResourceDictionary>

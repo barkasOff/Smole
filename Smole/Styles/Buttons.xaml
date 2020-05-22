@@ -1,0 +1,114 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Smole">
+
+    <!-- Button styles -->
+    <!-- System Icon Button -->
+    <Style TargetType="{x:Type Button}" x:Key="SystemIconButton">
+
+        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+        <Setter Property="Background" Value="{x:Null}"/>
+        <Setter Property="Padding" Value="2"/>
+
+        <Setter Property="Template">
+
+            <Setter.Value>
+
+                <ControlTemplate TargetType="{x:Type Button}">
+
+                    <Border Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}">
+
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+                    </Border>
+
+                </ControlTemplate>
+
+            </Setter.Value>
+
+        </Setter>
+
+    </Style>
+
+    <!-- AppButtons -->
+    <Style x:Key="AppPanelButtons" TargetType="Button">
+
+        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Width" Value="15"/>
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+
+        <Setter Property="LayoutTransform">
+            <Setter.Value>
+                <ScaleTransform ScaleX="1.5" />
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="Template">
+
+            <Setter.Value>
+
+                <ControlTemplate TargetType="Button">
+
+                    <Border Padding="{TemplateBinding Padding}"
+                            Background="{TemplateBinding Background}"
+                            VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                            CornerRadius="0">
+
+                        <TextBlock VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Text="{TemplateBinding Content}" />
+
+                    </Border>
+
+                </ControlTemplate>
+
+            </Setter.Value>
+
+        </Setter>
+
+        <Style.Triggers>
+
+            <Trigger Property="IsMouseOver" Value="true">
+
+                <Setter Property="Background" Value="{StaticResource MoreLightBrush}"/>
+
+            </Trigger>
+
+            <Trigger Property="IsPressed" Value="true">
+
+                <Setter Property="Background" Value="{StaticResource MoreMoreLightBrush}"/>
+
+            </Trigger>
+
+        </Style.Triggers>
+
+    </Style>
+
+    <!-- Close Button -->
+    <Style x:Key="CloseButtons" 
+           TargetType="{x:Type Button}" 
+           BasedOn="{StaticResource AppPanelButtons}">
+
+        <Style.Triggers>
+
+            <Trigger Property="IsMouseOver" Value="True">
+
+                <Setter Property="Background" Value="{StaticResource CloseRedBrush}" />
+                <Setter Property="Foreground" Value="White" />
+
+            </Trigger>
+
+            <Trigger Property="IsPressed" Value="True">
+
+                <Setter Property="Background" Value="Red"/>
+                <Setter Property="Foreground" Value="White"/>
+
+            </Trigger>
+
+        </Style.Triggers>
+
+    </Style>
+
+</ResourceDictionary>
