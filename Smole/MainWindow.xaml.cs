@@ -20,6 +20,8 @@ namespace Smole
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region Constructor
+
         public MainWindow()
         {
             InitializeComponent();
@@ -27,5 +29,27 @@ namespace Smole
             // Add datacontext
             DataContext = new WindowViewModel(this);
         }
+
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// When we are in the app
+        /// </summary>
+        private void AppWindow_Activated(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// When we aren't in the app
+        /// </summary>
+        private void AppWindow_Deactivated(object sender, EventArgs e)
+        {
+
+        } 
+
+        #endregion
     }
 }
