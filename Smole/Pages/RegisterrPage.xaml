@@ -1,0 +1,61 @@
+﻿<local:BasePage x:TypeArguments="core:RegisterViewModel" x:Class="Smole.RegisterPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Smole"
+      xmlns:core="clr-namespace:Smole.Core;assembly=Smole.Core"
+      mc:Ignorable="d" 
+      x:Name="RPage"
+      d:DesignHeight="500" d:DesignWidth="500"
+      Title="RegisterPage">
+
+    <!-- Register Page -->
+    <StackPanel HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                TextBlock.TextAlignment="Center">
+
+        <Border CornerRadius="10"
+                Width="300"
+                Padding="15 50 15 15"
+                Background="White">
+
+            <StackPanel>
+
+                <TextBlock Text="Sign Up"
+                           Foreground="{StaticResource BackAppButtonBrush}"
+                           FontSize="{StaticResource TheLargestFont}"/>
+
+                <TextBlock Text="First serious programm for me..."
+                           Margin="0 0 0 20"
+                           Foreground="gray"
+                           FontSize="{StaticResource SmallFont}"/>
+
+                <TextBox Tag="Username"
+                         Text="{Binding NewUserName, Mode=OneWayToSource}"/>
+
+                <TextBox Tag="Email"
+                         MaxLength="50"
+                         Text="{Binding NewUserEmail, Mode=OneWayToSource}"/>
+
+                <PasswordBox Name="PasswordText"
+                             Tag="Password"/>
+
+                <Button Content="Register"
+                        Width="100" Height="50"
+                        Command="{Binding RegisterCommand}"
+                        CommandParameter="{Binding ElementName=RPage}" 
+                        local:IsBusyProperty.Value="{Binding RegisterIsRunning}"/>
+
+            </StackPanel>
+
+        </Border>
+
+        <Button Content="Or, I already have an account..."
+                Command="{Binding LoginCommand}"
+                Style="{StaticResource DescriptionButton}"
+                HorizontalAlignment="Center" />
+
+    </StackPanel>
+    
+</local:BasePage>
