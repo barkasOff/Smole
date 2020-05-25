@@ -33,13 +33,40 @@
     </WindowChrome.WindowChrome>
 
     <!-- Main Border of the app -->
-    <Border>
+    <Border Background="#cccccc">
 
         <!-- Main Content -->
         <Grid>
 
-            
-            <Button Content="Test"/>
+            <!-- Background Image -->
+            <Grid.Background>
+
+                <!-- Image Source -->
+                <ImageBrush TileMode="Tile"
+                            ViewportUnits="Absolute"
+                            Viewport="0 0 500 500"
+                            ImageSource="/Images/Base/background.png"/>
+
+            </Grid.Background>
+
+            <!-- Dimmed Overlay -->
+            <Border Opacity="0.3"
+                    Grid.RowSpan="2"
+                    Panel.ZIndex="4">
+
+                <!-- Dimmed Overlay BackRound -->
+                <Border Background="Black"
+                        local:AnimateFadeInPropertyOverlay.Value="{Binding ApplicationViewModel.DimmebleOverlayVisible,
+                    Source={x:Static local:ViewModelLocator.Instance}}"/>
+
+            </Border>
+
+            <!-- Main Pages -->
+            <local:PageHost
+                CurrentPage="{Binding ApplicationViewModel.CurrentPage,
+                Source={x:Static local:ViewModelLocator.Instance}}"
+                CurrentPageViewModel="{Binding ApplicationViewModel.PageVM,
+                Source={x:Static local:ViewModelLocator.Instance}}"/>
 
         </Grid>
 

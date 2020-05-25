@@ -12,6 +12,9 @@
     <Color x:Key="MoreBackAppButtonColor">#0586e6</Color>
     <SolidColorBrush x:Key="MoreBackAppButtonBrush" Color="{StaticResource MoreBackAppButtonColor}"/>
 
+    <Color x:Key="WindowBlueColor">#3b92d4</Color>
+    <SolidColorBrush x:Key="WindowBlueBrush" Color="{StaticResource WindowBlueColor}"/>
+
     <Color x:Key="WindowMoreBlueColor">#409ce3</Color>
     <SolidColorBrush x:Key="WindowMoreBlueBrush" Color="{StaticResource WindowMoreBlueColor}"/>
 

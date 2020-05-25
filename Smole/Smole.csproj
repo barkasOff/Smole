@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Base\background.png" />
     <None Remove="Images\Icons\AppIcon.ico" />
     <None Remove="Images\Icons\IconApp.png" />
   </ItemGroup>
@@ -26,6 +27,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\Base\background.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\Icons\AppIcon.ico">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

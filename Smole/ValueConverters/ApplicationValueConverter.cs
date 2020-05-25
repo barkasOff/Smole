@@ -16,10 +16,10 @@ namespace Smole
                     //return new GroupPage();
                     
                 case ApplicationPage.Login:
-                    //return new LoginPage(parameter as LoginViewModel);
+                    return new LoginPage(parameter as LoginViewModel);
 
                 case ApplicationPage.Register:
-                    //return new RegisterPage(parameter as RegisterViewModel);
+                    return new RegisterPage(parameter as RegisterViewModel);
 
                 default:
                     Debugger.Break();

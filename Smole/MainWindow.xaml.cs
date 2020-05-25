@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Smole.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,18 +38,14 @@ namespace Smole
         /// <summary>
         /// When we are in the app
         /// </summary>
-        private void AppWindow_Activated(object sender, EventArgs e)
-        {
-
-        }
+        private void AppWindow_Activated(object sender, EventArgs e) =>
+            IoC.Application.DimmebleOverlayVisible = false;
 
         /// <summary>
         /// When we aren't in the app
         /// </summary>
-        private void AppWindow_Deactivated(object sender, EventArgs e)
-        {
-
-        } 
+        private void AppWindow_Deactivated(object sender, EventArgs e) =>
+            IoC.Application.DimmebleOverlayVisible = true;
 
         #endregion
     }

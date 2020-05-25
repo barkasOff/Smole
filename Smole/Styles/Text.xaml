@@ -66,7 +66,7 @@
         <Setter Property="FontSize" Value="{StaticResource LargeFont}" />
         <Setter Property="Padding" Value="10" />
         <Setter Property="Margin" Value="5 3" />
-        <Setter Property="BorderBrush" Value="{StaticResource LightBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource WindowBlueBrush}" />
         <Setter Property="MaxLength" Value="20"/>
         <Setter Property="BorderThickness" Value="0 0 0 1" />
         <Setter Property="TextAlignment" Value="Center"/>
@@ -155,7 +155,7 @@
         <Setter Property="FontSize" Value="{StaticResource LargeFont}" />
         <Setter Property="Padding" Value="10" />
         <Setter Property="Margin" Value="5 3" />
-        <Setter Property="BorderBrush" Value="{StaticResource LightBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource WindowBlueBrush}" />
         <Setter Property="MaxLength" Value="20"/>
         <Setter Property="BorderThickness" Value="0 0 0 1" />
         <Setter Property="TextAlignment" Value="Center"/>
@@ -230,7 +230,7 @@
         <Setter Property="FontSize" Value="{StaticResource LargeFont}" />
         <Setter Property="Padding" Value="10" />
         <Setter Property="Margin" Value="5 3" />
-        <Setter Property="BorderBrush" Value="{StaticResource LightBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource WindowBlueBrush}" />
         <Setter Property="MaxLength" Value="20"/>
         <Setter Property="BorderThickness" Value="0 0 0 1" />
         <Setter Property="Width" Value="200"/>
@@ -319,7 +319,7 @@
         <Setter Property="FontSize" Value="{StaticResource LargeFont}" />
         <Setter Property="Padding" Value="10" />
         <Setter Property="Margin" Value="5 3" />
-        <Setter Property="BorderBrush" Value="{StaticResource LightBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource WindowBlueBrush}" />
         <Setter Property="MaxLength" Value="20"/>
         <Setter Property="BorderThickness" Value="0 0 0 1" />
         <Setter Property="Width" Value="200"/>
