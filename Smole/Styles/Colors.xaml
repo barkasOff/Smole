@@ -6,6 +6,9 @@
     <Color x:Key="LightColor">#e8e8e8</Color>
     <SolidColorBrush x:Key="LightBrush" Color="{StaticResource LightColor}"/>
 
+    <Color x:Key="BackgroundColor">#cccccc</Color>
+    <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}"/>
+
     <Color x:Key="BackAppButtonColor">#057FD9</Color>
     <SolidColorBrush x:Key="BackAppButtonBrush" Color="{StaticResource BackAppButtonColor}"/>
 

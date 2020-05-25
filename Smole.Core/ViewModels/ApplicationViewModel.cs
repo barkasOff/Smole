@@ -13,6 +13,12 @@
         // True if we want to dimmed overlay
         public bool DimmebleOverlayVisible { get; set; }
 
+        // Flag which help to show bubble
+        public bool ShowBubble { get; set; } = true;
+
+        // Flag which help to show groups
+        public bool HasGroup { get; set; } = true;
+
         #endregion
 
         /// <summary>

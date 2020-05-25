@@ -26,7 +26,7 @@ namespace Smole
                     return new RegisterPage(viewModel as RegisterViewModel);
 
                 case ApplicationPage.Home:
-                    //return new GroupPage();
+                    return new GroupPage();
 
                 default:
                     Debugger.Break();
@@ -42,8 +42,8 @@ namespace Smole
         public static ApplicationPage ToApplicationPage(this BasePage page)
         {
             // Find application page that matches the base page
-            //if (page is GroupPage)
-                //return ApplicationPage.Home;
+            if (page is GroupPage)
+                return ApplicationPage.Home;
 
             if (page is LoginPage)
                 return ApplicationPage.Login;

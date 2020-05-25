@@ -33,7 +33,7 @@
     </WindowChrome.WindowChrome>
 
     <!-- Main Border of the app -->
-    <Border Background="#cccccc">
+    <Border Background="{StaticResource BackgroundBrush}">
 
         <!-- Main Content -->
         <Grid>

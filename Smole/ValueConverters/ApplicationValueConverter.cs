@@ -13,7 +13,7 @@ namespace Smole
             switch ((ApplicationPage)value)
             {
                 case ApplicationPage.Home:
-                    //return new GroupPage();
+                    return new GroupPage();
                     
                 case ApplicationPage.Login:
                     return new LoginPage(parameter as LoginViewModel);
