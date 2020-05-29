@@ -43,6 +43,7 @@ namespace Smole.Core
         private async Task RegisterMethodAsync(object parameter)
         {
             IoC.Application.GoToPage(ApplicationPage.Home);
+            IoC.Application.ShowGroupItems ^= true; ;
 
             await Task.Delay(1);
         }

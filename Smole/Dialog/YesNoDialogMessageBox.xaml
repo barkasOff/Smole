@@ -1,0 +1,43 @@
+﻿<local:BaseDialogUserControl x:Class="Smole.YesNoDialogMessageBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Smole"
+             mc:Ignorable="d">
+
+    <Border Padding="10">
+
+        <StackPanel Background="Transparent">
+
+            <TextBlock Text="{Binding Message, FallbackValue=Test}"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="{StaticResource MoreRegularFont}"
+                       Padding="5"/>
+
+            <StackPanel Orientation="Horizontal">
+
+                <Button Content="{Binding YesText, FallbackValue=Error}"
+                        FontSize="{StaticResource MoreRegularFont}"
+                        Width="100" Height="Auto"
+                        Padding="5" Margin="5"
+                        Command="{Binding YesCommand, 
+                    RelativeSource={RelativeSource FindAncestor,
+                    AncestorType={x:Type local:BaseDialogUserControl}}}"/>
+
+                <Button Content="{Binding NoText, FallbackValue=Error}"
+                        FontSize="{StaticResource MoreRegularFont}"
+                        Width="100" Height="Auto"
+                        Padding="5" Margin="5"
+                        Command="{Binding NoCommand, 
+                    RelativeSource={RelativeSource FindAncestor,
+                    AncestorType={x:Type local:BaseDialogUserControl}}}"/>
+
+            </StackPanel>
+
+        </StackPanel>
+
+    </Border>
+
+</local:BaseDialogUserControl>

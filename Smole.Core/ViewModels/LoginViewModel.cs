@@ -40,7 +40,13 @@ namespace Smole.Core
         private async Task LoginMethodAsync(object parameter)
         {
             IoC.Application.GoToPage(ApplicationPage.Home);
-            IoC.Application.ShowGroupItems ^= true; ;
+            IoC.Application.ShowGroupItems ^= true;
+
+            await IoC.UI.ShowMessage(new MessageBoxDialogViewModel
+            {
+                Title = "Welcome!!",
+                Message = "Here you are, dude!!"
+            });
 
             await Task.Delay(100);
         }
@@ -49,6 +55,12 @@ namespace Smole.Core
         {
             // GOTO: go to register page??
             IoC.Application.GoToPage(ApplicationPage.Register);
+
+            await IoC.UI.ShowMessage(new MessageBoxDialogViewModel
+            {
+                Title = "Welcome!!",
+                Message = "Here you are, dude!!"
+            });
 
             await Task.Delay(1);
         }

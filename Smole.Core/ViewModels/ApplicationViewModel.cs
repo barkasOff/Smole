@@ -31,6 +31,9 @@
         // True if the slide menu should be shown
         public bool SettingVisible { get; set; }
 
+        // True if user click yesButton
+        public bool YesNoChoise { get; set; }
+
         #endregion
 
         /// <summary>

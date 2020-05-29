@@ -152,6 +152,7 @@
                                        Focusable="False" 
                                        FontSize="{TemplateBinding FontSize}"
                                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                       HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
 
                             <TextBlock Style="{StaticResource SpinningText}" 
