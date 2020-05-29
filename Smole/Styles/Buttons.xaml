@@ -121,9 +121,8 @@
     </Style>
 
     <!-- Base Application Button -->
-    <Style TargetType="Button">
+    <Style TargetType="{x:Type Button}">
 
-        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
         <Setter Property="Background" Value="{StaticResource OrangeBrush}"/>
         <Setter Property="BorderBrush" Value="{x:Null}"/>
         <Setter Property="BorderThickness" Value="0"/>
@@ -132,36 +131,35 @@
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="Margin" Value="0 15 0 0"/>
 
-        <Setter Property="local:IsBusyProperty.Value" Value="False"/>
-
         <Setter Property="Template">
 
             <Setter.Value>
 
-                <ControlTemplate TargetType="Button">
+                <ControlTemplate TargetType="{x:Type ButtonBase}">
 
                     <Border x:Name="border"
                             CornerRadius="10"
-                            Background="{TemplateBinding Background}">
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}" 
+                            SnapsToDevicePixels="True">
 
                         <Grid>
 
-                            <TextBlock Text="{TemplateBinding Content}"
+                            <TextBlock Text="{TemplateBinding Content}" 
                                        Visibility="{TemplateBinding local:IsBusyProperty.Value,
                                 Converter={local:BooleanToVisiblityConverter}}"
+                                       Focusable="False" 
                                        FontSize="{TemplateBinding FontSize}"
-                                       HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                       Margin="{TemplateBinding Padding}" 
+                                       SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
 
-                            <Label Visibility="{TemplateBinding local:IsBusyProperty.Value,
-                                Converter={local:BooleanToVisiblityConverter},
-                                ConverterParameter=True}"
-                                   FontSize="{TemplateBinding FontSize}"
-                                   Foreground="{TemplateBinding Foreground}"
-                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                   Style="{StaticResource SpinningText}"/>
+                            <TextBlock Style="{StaticResource SpinningText}" 
+                                       HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                       FontSize="{TemplateBinding FontSize}"
+                                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                       Visibility="{TemplateBinding local:IsBusyProperty.Value,
+                                Converter={local:BooleanToVisiblityConverter}, ConverterParameter=True}"/>
 
                         </Grid>
 

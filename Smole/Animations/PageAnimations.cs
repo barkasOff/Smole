@@ -63,5 +63,29 @@ namespace Smole
             // Wait for it to finish
             await Task.Delay((int)(seconds * 1000));
         }
+
+        /// <summary>
+        /// Slides a page in from the right
+        /// </summary>
+        /// <param name="page">The page to animate</param>
+        /// <param name="seconds">The time the animation will take</param>
+        /// <returns></returns>
+        public static async Task FadeIn(this Page page, float seconds)
+        {
+            // Create the storyboard
+            var sb = new Storyboard();
+
+            // Add fade in animation
+            sb.AddFadeIn(0);
+
+            // Start animating
+            sb.Begin(page);
+
+            // Make page visible
+            page.Visibility = Visibility.Visible;
+
+            // Wait for it to finish
+            await Task.Delay((int)(seconds * 1000));
+        }
     }
 }

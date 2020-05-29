@@ -17,6 +17,11 @@ namespace Smole.Core
         /// </summary>
         public static ApplicationViewModel Application => IoC.Get<ApplicationViewModel>();
 
+        /// <summary>
+        /// A shotcut to acces a <see cref="IUIManager"/>
+        /// </summary>
+        public static IUIManager UI => IoC.Get<IUIManager>();
+
         #endregion
 
         #region Construction

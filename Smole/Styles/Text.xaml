@@ -387,14 +387,10 @@
     </Style>
 
     <!-- SpinningText -->
-    <Style x:Key="SpinningText" TargetType="{x:Type Label}">
+    <Style TargetType="{x:Type TextBlock}" x:Key="SpinningText">
 
+        <Setter Property="Text" Value="🛈" />
         <Setter Property="RenderTransformOrigin" Value="0.5, 0.5" />
-        <Setter Property="FontSize" Value="{StaticResource LargeFont}"/>
-        <Setter Property="Content" Value="{StaticResource mLoading}" />
-        <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="HorizontalAlignment" Value="Center" />
-        <Setter Property="Foreground" Value="White"/>
         <Setter Property="RenderTransform">
             <Setter.Value>
                 <RotateTransform></RotateTransform>

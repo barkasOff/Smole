@@ -39,9 +39,10 @@ namespace Smole.Core
 
         private async Task LoginMethodAsync(object parameter)
         {
-            await Task.Delay(1000);
-
             IoC.Application.GoToPage(ApplicationPage.Home);
+            IoC.Application.ShowGroupItems ^= true; ;
+
+            await Task.Delay(100);
         }
 
         private async Task RegisterMethodAsync()

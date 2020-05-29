@@ -5,7 +5,7 @@ namespace Smole
     /// <summary>
     /// Логика взаимодействия для GroupPage.xaml
     /// </summary>
-    public partial class GroupPage : BasePage<LoginViewModel>
+    public partial class GroupPage : BasePage<GroupViewModel>
     {
         #region Constructor
 
@@ -20,7 +20,7 @@ namespace Smole
         /// <summary>
         /// Constructor with specific view model
         /// </summary>
-        public GroupPage(LoginViewModel specificViewModel) : base(specificViewModel)
+        public GroupPage(GroupViewModel specificViewModel) : base(specificViewModel)
         {
             InitializeComponent();
         }

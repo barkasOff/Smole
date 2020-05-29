@@ -14,10 +14,15 @@
         public bool DimmebleOverlayVisible { get; set; }
 
         // Flag which help to show bubble
-        public bool ShowBubble { get; set; } = true;
+        public bool ShowBubble { get; set; }
 
         // Flag which help to show groups
-        public bool HasGroup { get; set; } = true;
+        public bool HasGroup { get; set; }
+
+        /// <summary>
+        /// Flag wich help with beatiful slode group page
+        /// </summary>
+        public bool ShowGroupItems { get; set; }
 
         #endregion
 

@@ -95,15 +95,24 @@ namespace Smole
             if (this.PageLoadAnimation == PageAnimation.None)
                 return;
 
+            if (IoC.Application.CurrentPage == ApplicationPage.Home)
+                PageLoadAnimation = PageAnimation.None;
+
             switch (this.PageLoadAnimation)
             {
                 case PageAnimation.SlideAndFadeInFromRight:
-
                     // Start the animation
                     await this.SlideAndFadeInFromRight(this.SlideSeconds);
 
                     break;
+
+                case PageAnimation.None:
+                    // Start the animation
+                    await this.FadeIn(this.SlideSeconds);
+
+                    break;
             }
+            PageLoadAnimation = PageAnimation.SlideAndFadeInFromRight;
         }
 
         // Animates the page out
