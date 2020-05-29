@@ -61,6 +61,18 @@
 
             </Border>
 
+            <!-- Slide Menu to see sections -->
+            <local:HamburgerControl
+                Panel.ZIndex="5"
+                local:AnimateSlideInFromLeftPropertyHamg.Value="{Binding ApplicationViewModel.SideMenuVisible,
+                Source={x:Static local:ViewModelLocator.Instance}}"/>
+
+            <!-- Setting Control -->
+            <local:SettingControl 
+                Panel.ZIndex="1"
+                local:AnimateSlideInFromBottomProperty.Value="{Binding ApplicationViewModel.SettingVisible,
+                Source={x:Static local:ViewModelLocator.Instance}}"/>
+
             <!-- Main Pages -->
             <local:PageHost
                 CurrentPage="{Binding ApplicationViewModel.CurrentPage,

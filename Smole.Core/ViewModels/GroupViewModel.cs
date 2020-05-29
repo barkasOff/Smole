@@ -47,6 +47,11 @@ namespace Smole.Core
         /// </summary>
         public ICommand FindGroupCommand { get; set; }
 
+        /// <summary>
+        /// Search a group in the SN
+        /// </summary>
+        public ICommand ShowHamburgerCommand { get; set; }
+
         #endregion
 
         #region Constructor
@@ -56,12 +61,13 @@ namespace Smole.Core
         /// </summary>
         public GroupViewModel()
         {
-            OpenGroupCommand = new RelayCommand(OpenGroupMethod);
-            FilterCommand = new RelayCommand(FilterMethod);
+            ShowHamburgerCommand = new RelayCommand(ShowHamburgerMethod);
             ShowBubbleCommand = new RelayCommand(ShowBubbleMethod);
+            OpenGroupCommand = new RelayCommand(OpenGroupMethod);
             FindGroupCommand = new RelayCommand(FindGroupMethod);
+            FilterCommand = new RelayCommand(FilterMethod);
         }
-               
+
         #endregion
 
         #region Methods
@@ -94,6 +100,15 @@ namespace Smole.Core
         private void FindGroupMethod()
         {
             throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Show Hamburger
+        /// </summary>
+        private void ShowHamburgerMethod()
+        {
+            IoC.Application.SideMenuVisible ^= true;
+            IoC.Application.DimmebleOverlayVisible = true;
         }
 
         #endregion

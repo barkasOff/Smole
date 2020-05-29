@@ -10,6 +10,7 @@
     <None Remove="Images\Base\background.png" />
     <None Remove="Images\Icons\AppIcon.ico" />
     <None Remove="Images\Icons\IconApp.png" />
+    <None Remove="Images\PaulWalker.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,6 +35,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\Icons\IconApp.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PaulWalker.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

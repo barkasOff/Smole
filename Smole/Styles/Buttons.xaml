@@ -351,4 +351,44 @@
 
     </Style>
 
+    <!-- MainHamburgerPanel Buttons -->
+    <Style x:Key="MainPanelHamburger" TargetType="Button" BasedOn="{StaticResource AppPanelButtons}">
+
+        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="BorderBrush" Value="{x:Null}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="{x:Null}"/>
+        <Setter Property="FontSize" Value="{StaticResource MoreRegularFont}"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Width" Value="250"/>
+
+        <Setter Property="LayoutTransform">
+            <Setter.Value>
+                <ScaleTransform ScaleX="1" />
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="Template">
+
+            <Setter.Value>
+
+                <ControlTemplate TargetType="Button">
+
+                    <Border CornerRadius="0"
+                                Background="{TemplateBinding Background}">
+
+                        <ContentPresenter HorizontalAlignment="Left"
+                                          VerticalAlignment="Center"/>
+
+                    </Border>
+
+                </ControlTemplate>
+
+            </Setter.Value>
+
+        </Setter>
+
+    </Style>
+
 </ResourceDictionary>

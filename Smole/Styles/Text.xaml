@@ -66,7 +66,7 @@
         <Setter Property="FontSize" Value="{StaticResource LargeFont}" />
         <Setter Property="Padding" Value="10" />
         <Setter Property="Margin" Value="5 3" />
-        <Setter Property="BorderBrush" Value="{StaticResource WindowBlueBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource LightBrush}" />
         <Setter Property="MaxLength" Value="20"/>
         <Setter Property="BorderThickness" Value="0 0 0 1" />
         <Setter Property="TextAlignment" Value="Center"/>
@@ -127,14 +127,14 @@
 
                         <Trigger Property="IsMouseOver" Value="True">
 
-                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource WindowMoreBlueBrush}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource BackgroundBrush}"/>
                             <Setter Property="FontSize" TargetName="tbText" Value="{StaticResource LargeMoreFont}"/>
 
                         </Trigger>
 
                         <Trigger Property="IsKeyboardFocused" Value="True">
 
-                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource WindowMoreMoreBlueBrush}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource BackgroundBrush}"/>
                             <Setter Property="FontSize" TargetName="tbText" Value="{StaticResource LargeMoreFont}"/>
 
                         </Trigger>
@@ -155,7 +155,7 @@
         <Setter Property="FontSize" Value="{StaticResource LargeFont}" />
         <Setter Property="Padding" Value="10" />
         <Setter Property="Margin" Value="5 3" />
-        <Setter Property="BorderBrush" Value="{StaticResource WindowBlueBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource LightBrush}" />
         <Setter Property="MaxLength" Value="20"/>
         <Setter Property="BorderThickness" Value="0 0 0 1" />
         <Setter Property="TextAlignment" Value="Center"/>
@@ -230,7 +230,7 @@
         <Setter Property="FontSize" Value="{StaticResource LargeFont}" />
         <Setter Property="Padding" Value="10" />
         <Setter Property="Margin" Value="5 3" />
-        <Setter Property="BorderBrush" Value="{StaticResource WindowBlueBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource LightBrush}" />
         <Setter Property="MaxLength" Value="20"/>
         <Setter Property="BorderThickness" Value="0 0 0 1" />
         <Setter Property="Width" Value="200"/>
@@ -291,14 +291,14 @@
 
                         <Trigger Property="IsMouseOver" Value="True">
 
-                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource WindowMoreBlueBrush}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource BackgroundBrush}"/>
                             <Setter Property="FontSize" TargetName="tbText" Value="{StaticResource LargeMoreFont}"/>
 
                         </Trigger>
 
                         <Trigger Property="IsKeyboardFocused" Value="True">
 
-                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource WindowMoreMoreBlueBrush}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource BackgroundBrush}"/>
                             <Setter Property="FontSize" TargetName="tbText" Value="{StaticResource LargeMoreFont}"/>
 
                         </Trigger>
@@ -319,7 +319,7 @@
         <Setter Property="FontSize" Value="{StaticResource LargeFont}" />
         <Setter Property="Padding" Value="10" />
         <Setter Property="Margin" Value="5 3" />
-        <Setter Property="BorderBrush" Value="{StaticResource WindowBlueBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource LightBrush}" />
         <Setter Property="MaxLength" Value="20"/>
         <Setter Property="BorderThickness" Value="0 0 0 1" />
         <Setter Property="Width" Value="200"/>

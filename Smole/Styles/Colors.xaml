@@ -6,6 +6,9 @@
     <Color x:Key="LightColor">#e8e8e8</Color>
     <SolidColorBrush x:Key="LightBrush" Color="{StaticResource LightColor}"/>
 
+    <Color x:Key="LessLightColor">#8f8f8f</Color>
+    <SolidColorBrush x:Key="LessLightBrush" Color="{StaticResource LessLightColor}"/>
+
     <Color x:Key="BackgroundColor">#cccccc</Color>
     <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}"/>
 

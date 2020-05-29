@@ -13,6 +13,9 @@
         // True if we want to dimmed overlay
         public bool DimmebleOverlayVisible { get; set; }
 
+        // True if the slide menu should be shown
+        public bool SideMenuVisible { get; set; }
+
         // Flag which help to show bubble
         public bool ShowBubble { get; set; }
 
@@ -23,6 +26,10 @@
         /// Flag wich help with beatiful slode group page
         /// </summary>
         public bool ShowGroupItems { get; set; }
+
+
+        // True if the slide menu should be shown
+        public bool SettingVisible { get; set; }
 
         #endregion
 

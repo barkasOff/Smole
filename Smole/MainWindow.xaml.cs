@@ -38,8 +38,11 @@ namespace Smole
         /// <summary>
         /// When we are in the app
         /// </summary>
-        private void AppWindow_Activated(object sender, EventArgs e) =>
+        private void AppWindow_Activated(object sender, EventArgs e)
+        {
             IoC.Application.DimmebleOverlayVisible = false;
+            IoC.Application.SideMenuVisible = false;
+        }
 
         /// <summary>
         /// When we aren't in the app

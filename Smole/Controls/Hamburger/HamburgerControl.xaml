@@ -1,0 +1,118 @@
+﻿<UserControl x:Class="Smole.HamburgerControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Smole"
+             xmlns:core="clr-namespace:Smole.Core;assembly=Smole.Core"
+             mc:Ignorable="d"
+             DataContext="{x:Static core:HamburgerViewModel.Instance}">
+
+    <!-- Hamburger -->
+    <Grid HorizontalAlignment="Left"
+          Width="250"
+          Background="{StaticResource LightBrush}">
+
+        <!-- Initialize-->
+        <Grid.RowDefinitions>
+
+            <!-- ProfilePictire + Info -->
+            <RowDefinition Height="100"/>
+            <!-- Sections -->
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+
+        <!-- Up Panel Background-->
+        <Border Padding="10"
+                x:Name="border"
+                Background="{StaticResource LessLightBrush}">
+
+            <!-- ProfilePictire + Info -->
+            <Grid>
+
+                <!-- Initialize-->
+                <Grid.ColumnDefinitions>
+
+                    <!-- Profile Picture -->
+                    <ColumnDefinition Width="Auto"/>
+                    <!-- Profile Info -->
+                    <ColumnDefinition Width="*"/>
+
+                </Grid.ColumnDefinitions>
+
+                <!-- Profile Picture -->
+                <Ellipse Width="50" Height="50" Margin="0 0 5 10"
+                         VerticalAlignment="Bottom">
+
+                    <Ellipse.Fill>
+
+                        <ImageBrush ImageSource="../../Images/PaulWalker.jpg"
+                                    Stretch="UniformToFill"/>
+
+                    </Ellipse.Fill>
+
+                </Ellipse>
+
+                <!-- Profile Info -->
+                <local:UpHamburgerPanel Grid.Column="1"
+                                        VerticalAlignment="Bottom"
+                                        Margin="0 0 0 15"/>
+
+                <!-- Back Button -->
+                <Button Content="✘" Margin="0 -5 0 0"
+                        Grid.ColumnSpan="2" Cursor="Hand"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Right"
+                        Style="{StaticResource MenuButtons}"
+                        Command="{Binding CloseCommand}"/>
+
+            </Grid>
+
+        </Border>
+
+        <!-- Sections -->
+        <StackPanel Grid.Row="1">
+
+            <!-- Main Buttons -->
+            <Button Style="{StaticResource MainPanelHamburger}"
+                    Command="{Binding OpenSettingCommand}">
+
+                <Button.Content>
+
+                    <StackPanel Orientation="Horizontal"
+                                Margin="10 0 0 0">
+
+                        <Label Content="{StaticResource mBLSetting}"
+                               Margin="0 0 10 0"
+                               FontSize="{StaticResource LessLargeFont}"/>
+
+                        <TextBlock Text="Settings" 
+                                   FontWeight="Bold"
+                                   VerticalAlignment="Center"
+                                   FontSize="{StaticResource RegularFont}"/>
+
+                    </StackPanel>
+
+                </Button.Content>
+
+            </Button>
+
+        </StackPanel>
+
+        <!-- Contact Info -->
+        <StackPanel Grid.Row="1"
+                    Margin="10"
+                    VerticalAlignment="Bottom">
+
+            <TextBlock Grid.Row="1"
+                   FontWeight="Bold"
+                   Text="Contact Adress:"/>
+            <TextBlock Grid.Row="1"
+                   Text="boris.sizov.2001@mail.ru"/>
+
+        </StackPanel>
+
+    </Grid>
+
+</UserControl>
