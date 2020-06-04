@@ -8,11 +8,11 @@
 
     <StackPanel>
 
-        <TextBlock Text="barkasOff"
+        <TextBlock Text="{Binding UserName}"
                    FontWeight="Bold"
                    FontSize="{StaticResource RegularFont}"/>
 
-        <TextBlock Text="boris.sizov.2001@mail.ru"
+        <TextBlock Text="{Binding Email}"
                    TextTrimming="WordEllipsis"/>
 
     </StackPanel>

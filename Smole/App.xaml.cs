@@ -39,9 +39,8 @@ namespace Smole
             // Bind a UIManager
             IoC.Kernel.Bind<IUIManager>().ToConstant(new UIManager());
 
-            //// Load Groups and Users
-            //IoC.ABI.borovNetwork.LoadFromFile();
-            //IoC.ABI.LoadUsers();
+            // Load Groups and Users
+            IoC.Base.LoadUsers();
         }
     }
 }

@@ -45,6 +45,12 @@ namespace Smole.Core
             IoC.Application.GoToPage(ApplicationPage.Home);
             IoC.Application.ShowGroupItems ^= true; ;
 
+            await IoC.UI.ShowMessage(new MessageBoxDialogViewModel
+            {
+                Title = "Welcome!!",
+                Message = "Here you are, dude!!"
+            });
+
             await Task.Delay(1);
         }
 

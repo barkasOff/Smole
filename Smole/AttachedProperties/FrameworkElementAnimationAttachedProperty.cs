@@ -191,6 +191,20 @@ namespace Smole
         }
     }
 
+    // Resize Host
+    public class AnimateFadeInPropertyBubble : AnimateBaseProperty<AnimateFadeInPropertyBubble>
+    {
+        protected override async void DoAnimation(FrameworkElement element, bool value)
+        {
+            if (value)
+                // Animate in
+                await element.FadeIn(FirstLoad ? 0 : 0.3f);
+            else
+                // Animate out
+                await element.FadeOut(FirstLoad ? 0 : 0.3f);
+        }
+    }
+
     #endregion
 
     #region Another

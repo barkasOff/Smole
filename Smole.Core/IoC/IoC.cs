@@ -18,6 +18,21 @@ namespace Smole.Core
         public static ApplicationViewModel Application => IoC.Get<ApplicationViewModel>();
 
         /// <summary>
+        /// A shotcut to acces a <see cref="SettingViewModel"/>
+        /// </summary>
+        public static SettingViewModel Setting => IoC.Get<SettingViewModel>();
+
+        /// <summary>
+        /// A shotcut to acces a <see cref="UserItemListViewModel"/>
+        /// </summary>
+        public static UserItemListViewModel AppUser => IoC.Get<UserItemListViewModel>();
+
+        /// <summary>
+        /// A shotcut to acces a <see cref="ApplicationViewModel"/>
+        /// </summary>
+        public static SmoleBase Base => IoC.Get<SmoleBase>();
+
+        /// <summary>
         /// A shotcut to acces a <see cref="IUIManager"/>
         /// </summary>
         public static IUIManager UI => IoC.Get<IUIManager>();
@@ -38,6 +53,15 @@ namespace Smole.Core
         {
             // Bind to a singelton ApplicationViewModel
             Kernel.Bind<ApplicationViewModel>().ToConstant(new ApplicationViewModel());
+
+            // Bind to a singelton SettingViewModel
+            Kernel.Bind<SettingViewModel>().ToConstant(new SettingViewModel());
+
+            // Bind to a singelton SettingViewModel
+            Kernel.Bind<UserItemListViewModel>().ToConstant(new UserItemListViewModel());
+
+            // Bind to a singelton SmoleBase
+            Kernel.Bind<SmoleBase>().ToConstant(new SmoleBase());
         }
 
         #endregion

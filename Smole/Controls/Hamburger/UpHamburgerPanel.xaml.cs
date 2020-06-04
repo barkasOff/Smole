@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Smole.Core;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,6 +23,13 @@ namespace Smole
         public UpHamburgerPanel()
         {
             InitializeComponent();
+
+            // If we are in design mode...
+            if (DesignerProperties.GetIsInDesignMode(this))
+                // Create new instance of settings view model
+                DataContext = new UserItemListViewModel();
+            else
+                DataContext = IoC.AppUser;
         }
     }
 }
