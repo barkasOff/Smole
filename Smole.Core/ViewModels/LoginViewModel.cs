@@ -44,6 +44,8 @@ namespace Smole.Core
 
             // Load user Info
             IoC.Setting.LoadNewDataUser();
+            IoC.Base.LastUserInTheApp.SaveUserInfo = true;
+            IoC.Base.SaveUsers();
 
             await IoC.UI.ShowMessage(new MessageBoxDialogViewModel
             {

@@ -8,7 +8,7 @@ namespace Smole.Core
         public string Name { get; set; }
 
         // The latest message from this chat
-        public string Discription { get; set; }
+        public string Discription { get; set; } = "Welcome to may group!";
 
         // The initials to show for the profile picture background
         public string Initials { get; set; }
@@ -19,11 +19,8 @@ namespace Smole.Core
         /// </summary>
         public string ProfilePictureRGB { get; set; }
 
-        // Users Count
-        public int Count { get; set; }
-
         // Users Current Count
-        public int CurrentUserCount { get; set; }
+        public int UserCount { get; set; }
 
         // Current Image of the group
         public string CurrentPageImage { get; set; }

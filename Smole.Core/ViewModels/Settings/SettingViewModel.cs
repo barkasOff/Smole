@@ -159,7 +159,7 @@ namespace Smole.Core
         public void LoadNewDataUser()
         {
             // Set first name
-            Name.OriginalText = IoC.AppUser.Name = IoC.Base.LastUserInTheApp?.UserName;
+            Name.OriginalText = IoC.AppUser.Name = IoC.Base.LastUserInTheApp?.Name;
 
             // Set last name
             Surname.OriginalText = IoC.AppUser.SurName = IoC.Base.LastUserInTheApp?.Surname;

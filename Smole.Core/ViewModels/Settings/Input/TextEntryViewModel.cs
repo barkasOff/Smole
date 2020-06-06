@@ -6,7 +6,7 @@ namespace Smole.Core
     /// <summary>
     /// The view model for a text entry to edit a string value
     /// <summary>
-    public class TextEntryViewModel :BaseViewModel
+    public class TextEntryViewModel : BaseViewModel
     {
         #region Singleton
 

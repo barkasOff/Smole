@@ -15,6 +15,11 @@
         /// <summary>
         /// Goto home page
         /// </summary>
-        Home = 2
+        Home = 2,
+
+        /// <summary>
+        /// Goto Group Content
+        /// </summary>
+        GroupContent = 3
     }
 }

@@ -4,22 +4,44 @@
     {
         #region Public Properties
 
-        // The current page of the application
+        /// <summary>
+        /// The current page of the application
+        /// </summary>
         public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Login;
 
-        // Page View Model
+        /// <summary>
+        /// The current group of the application
+        /// </summary>
+        public ApplicationPage CurrentGroup { get; set; } = ApplicationPage.GroupContent;
+
+        /// <summary>
+        /// Page View Model
+        /// </summary>
         public BaseViewModel PageVM { get; set; }
 
-        // True if we want to dimmed overlay
+        /// <summary>
+        /// Group View Model
+        /// </summary>
+        public BaseViewModel GroupVM { get; set; }
+
+        /// <summary>
+        /// True if we want to dimmed overlay
+        /// </summary>
         public bool DimmebleOverlayVisible { get; set; }
 
-        // True if the slide menu should be shown
+        /// <summary>
+        /// True if the slide menu should be shown
+        /// </summary>
         public bool SideMenuVisible { get; set; }
 
-        // Flag which help to show bubble
-        public bool ShowBubble { get; set; }
+        /// <summary>
+        /// Flag which help to show bubble
+        /// </summary>
+        public bool ShowBubble { get; set; } = true;
 
-        // Flag which help to show groups
+        /// <summary>
+        /// Flag which help to show groups
+        /// </summary>
         public bool HasGroup { get; set; }
 
         /// <summary>
@@ -27,11 +49,14 @@
         /// </summary>
         public bool ShowGroupItems { get; set; }
 
-
-        // True if the slide menu should be shown
+        /// <summary>
+        /// True if the slide menu should be shown
+        /// </summary>
         public bool SettingVisible { get; set; }
 
-        // True if user click yesButton
+        /// <summary>
+        /// True if user click yesButton
+        /// </summary>
         public bool YesNoChoise { get; set; }
 
         #endregion
@@ -51,6 +76,23 @@
 
             // Give signal to change the page
             OnPropertyChanged(nameof(CurrentPage));
+        }
+
+        /// <summary>
+        /// Go to the spacial group with spacial viewModel
+        /// </summary>
+        /// <param name="group"> Go to?.. </param>
+        /// <param name="viewModel"> View model of the page </param>
+        public void GoToGroup(ApplicationPage group, BaseViewModel viewModel = null)
+        {
+            // Change view model
+            GroupVM = viewModel;
+
+            // Change page
+            CurrentGroup = group;
+
+            // Give signal to change the page
+            OnPropertyChanged(nameof(CurrentGroup));
         }
     }
 }

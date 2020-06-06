@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="Smole.GroupControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Smole"
+             mc:Ignorable="d"
+             DataContext="{Binding}">
+
+    <ScrollViewer local:AnimateFadeInPropertyGroupUpdate.Value="{Binding NewGroup}">
+
+        <!-- May be for Background -->
+        <Border>
+
+            <!-- Main Content -->
+            <Grid>
+
+                <!-- Initialize -->
+                <Grid.RowDefinitions>
+
+                    <!-- Image of group -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Group Content -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Posts of the group -->
+                    <RowDefinition Height="*"/>
+
+                </Grid.RowDefinitions>
+
+                <!-- Border for Info Panel -->
+                <local:GroupHeadControl/>
+
+                <!-- Group Content -->
+                <local:NewPostControl Grid.Row="1"/>
+
+                <!-- Border for Main Panel -->
+                <local:Posts Grid.Row="2"/>
+
+            </Grid>
+
+        </Border>
+
+    </ScrollViewer>
+
+</UserControl>

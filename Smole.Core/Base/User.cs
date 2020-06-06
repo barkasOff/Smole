@@ -35,7 +35,7 @@ namespace Smole.Core
         public string Password { get; set; }
 
         // User groups are followed
-        public List<string> Groups { get; set; } = new List<string>();
+        public List<Group> Groups { get; set; } = new List<Group>();
 
         // All photo in user account
         public List<string> Photos { get; set; } = new List<string>();

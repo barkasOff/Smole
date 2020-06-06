@@ -21,6 +21,9 @@ namespace Smole
                 case ApplicationPage.Register:
                     return new RegisterPage(parameter as RegisterViewModel);
 
+                case ApplicationPage.GroupContent:
+                    return new GroupView(parameter as GroupItemListViewModel);
+
                 default:
                     Debugger.Break();
                     return null;

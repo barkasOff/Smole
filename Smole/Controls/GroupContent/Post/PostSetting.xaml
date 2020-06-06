@@ -1,0 +1,170 @@
+﻿<UserControl x:Class="Smole.PostSetting"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Smole"
+             DataContext="{Binding}"
+             mc:Ignorable="d" >
+
+    <!-- Border radius and backround -->
+    <Border Width="120"
+            Margin="0 0 0 5"
+            Padding="0 5"
+            Height="Auto"
+            CornerRadius="10"
+            Background="White">
+
+        <!-- Shadow -->
+        <Border.Effect>
+
+            <!-- Drop Shadow -->
+            <DropShadowEffect ShadowDepth="0" Opacity="0.2"/>
+
+        </Border.Effect>
+
+        <!-- Main Content -->
+        <Grid>
+
+            <!-- Triangle -->
+            <Path Stroke="Black"
+                  Panel.ZIndex="1"
+                  VerticalAlignment="Top"
+                  HorizontalAlignment="Right"
+                  Margin="15 -2 15 0"
+                  Data="M 0,0 L 10,-10 L 20,0 L 0,0" 
+                  StrokeThickness="0"
+                  Fill="White"/>
+
+            <!-- Buttons -->
+            <StackPanel>
+
+                <!-- Delete post -->
+                <TextBlock Width="120"
+                           Padding="3"
+                           Margin="0 5 0 0"
+                           FontWeight="Bold"
+                           Text="Delete post"
+                           TextAlignment="Center"
+                           Background="Transparent"
+                           HorizontalAlignment="Center"
+                           FontSize="{StaticResource RegularFont}">
+
+                    <!-- All Triggers -->
+                    <TextBlock.Triggers>
+
+                        <!-- Enter Mouse -->
+                        <EventTrigger RoutedEvent="MouseEnter">
+
+                            <BeginStoryboard>
+
+                                <Storyboard>
+
+                                    <ColorAnimation To="LightGray" 
+                                                    Duration="0:0:0" 
+                                                    Storyboard.TargetProperty="Background.Color"/>
+
+                                </Storyboard>
+
+                            </BeginStoryboard>
+
+                        </EventTrigger>
+
+                        <!-- Leave Mouse -->
+                        <EventTrigger RoutedEvent="MouseLeave">
+
+                            <BeginStoryboard>
+
+                                <Storyboard>
+
+                                    <ColorAnimation To="Transparent" 
+                                                Duration="0:0:0" 
+                                                Storyboard.TargetProperty="Background.Color"/>
+
+                                </Storyboard>
+
+                            </BeginStoryboard>
+
+                        </EventTrigger>
+
+                    </TextBlock.Triggers>
+                    
+                    <!-- Click to the delete post -->
+                    <TextBlock.InputBindings>
+
+                        <MouseBinding MouseAction="LeftClick"
+                                      Command="{Binding DeletePostCommand}"
+                                      CommandParameter="{Binding 
+                            ElementName=PostText.Text}"/>
+
+                    </TextBlock.InputBindings>
+
+                </TextBlock>
+
+                <!-- Edit post -->
+                <TextBlock Width="120"
+                           Padding="3"
+                           Margin="0 0 0 5"
+                           FontWeight="Bold"
+                           Text="Edit post"
+                           TextAlignment="Center"
+                           Background="Transparent"
+                           HorizontalAlignment="Center"
+                           FontSize="{StaticResource RegularFont}">
+
+                    <!-- All Triggers -->
+                    <TextBlock.Triggers>
+
+                        <!-- Enter Mouse -->
+                        <EventTrigger RoutedEvent="MouseEnter">
+
+                            <BeginStoryboard>
+
+                                <Storyboard>
+
+                                    <ColorAnimation To="LightGray" 
+                                                Duration="0:0:0" 
+                                                Storyboard.TargetProperty="Background.Color"/>
+
+                                </Storyboard>
+
+                            </BeginStoryboard>
+
+                        </EventTrigger>
+
+                        <!-- Leave Mouse -->
+                        <EventTrigger RoutedEvent="MouseLeave">
+
+                            <BeginStoryboard>
+
+                                <Storyboard>
+
+                                    <ColorAnimation To="Transparent" 
+                                                Duration="0:0:0" 
+                                                Storyboard.TargetProperty="Background.Color"/>
+
+                                </Storyboard>
+
+                            </BeginStoryboard>
+
+                        </EventTrigger>
+
+                    </TextBlock.Triggers>
+                    
+                    <!-- Click to the delete post -->
+                    <TextBlock.InputBindings>
+
+                        <MouseBinding MouseAction="LeftClick"
+                                      Command="{Binding EditPostCommand}"/>
+
+                    </TextBlock.InputBindings>
+
+                </TextBlock>
+
+            </StackPanel>
+
+        </Grid>
+
+    </Border>
+
+</UserControl>

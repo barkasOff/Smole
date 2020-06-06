@@ -12,7 +12,7 @@
 
         <ScrollViewer VerticalScrollBarVisibility="Visible">
 
-            <ItemsControl ItemsSource="{Binding Items}">
+            <ItemsControl ItemsSource="{Binding Groups}">
 
                 <ItemsControl.ItemTemplate>
 

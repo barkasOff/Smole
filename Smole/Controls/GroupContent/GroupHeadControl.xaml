@@ -1,0 +1,215 @@
+﻿<UserControl x:Class="Smole.GroupHeadControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Smole"
+             mc:Ignorable="d" 
+             DataContext="{Binding}">
+
+    <Border Margin="5"
+            CornerRadius="10"
+            Background="{StaticResource LightBrush}">
+
+        <!-- Shadow -->
+        <Border.Effect>
+
+            <!-- Initialize Shadow -->
+            <DropShadowEffect ShadowDepth="0"
+                              Opacity="0.2"/>
+
+        </Border.Effect>
+
+        <Grid>
+
+            <!-- Opacity Mask for a photo -->
+            <Border Name="Mask"
+                    CornerRadius="10"
+                    Background="{StaticResource LightBrush}"/>
+
+            <!-- Main Info -->
+            <Grid>
+
+                <!-- Corner clipping -->
+                <Grid.OpacityMask>
+
+                    <VisualBrush Visual="{Binding ElementName=Mask}" />
+
+                </Grid.OpacityMask>
+
+                <!-- Initialize -->
+                <Grid.RowDefinitions>
+
+                    <!-- Image of group -->
+                    <RowDefinition Height="200"/>
+                    <!-- Group Hat -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Shadow -->
+                    <RowDefinition Height="Auto"/>
+
+                </Grid.RowDefinitions>
+
+                <!-- Image -->
+                <Image Source="../../Images/DefaultGroup.png"
+                       Stretch="UniformToFill"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"/>
+
+                <!-- Image of group -->
+
+                <!-- Padding and Background -->
+                <Border Grid.Row="1"
+                        Padding="20"
+                        VerticalAlignment="Center"
+                        Background="{StaticResource LightBrush}">
+
+                    <!-- Group Hat -->
+                    <Grid>
+
+                        <!-- Initialize -->
+                        <Grid.ColumnDefinitions>
+
+                            <!-- Icon -->
+                            <ColumnDefinition Width="Auto"/>
+                            <!-- Info -->
+                            <ColumnDefinition Width="*"/>
+                            <!-- Follow -->
+                            <ColumnDefinition Width="Auto"/>
+
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+
+                            <!-- Up unfo -->
+                            <RowDefinition Height="*"/>
+                            <!-- Lower unfo -->
+                            <RowDefinition Height="Auto"/>
+
+                        </Grid.RowDefinitions>
+
+                        <!-- Icon -->
+                        <Border Background="{Binding ProfilePictureRGB, Converter={local:StringRGBToBrushConverter}}" 
+                                Height="70"
+                                Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
+                                CornerRadius="{Binding ActualHeight, RelativeSource={RelativeSource Self}}">
+
+                            <!-- Profile picture initials -->
+                            <TextBlock Text="{Binding Initials}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       Margin="0 0 0 3"
+                                       FontSize="{StaticResource LargeMoreFont}"/>
+
+                        </Border>
+
+                        <!-- Info -->
+                        <StackPanel Grid.Column="1"
+                                            Margin="20">
+
+                            <!-- Group name -->
+                            <TextBlock Margin="0"
+                                       Text="{Binding Name}"
+                                       HorizontalAlignment="Left"
+                                       FontSize="{StaticResource MoreRegularFont}"
+                                       Style="{StaticResource BoldTextBlockStyle}"/>
+
+                            <!-- Group name -->
+                            <TextBlock Margin="0"
+                                       HorizontalAlignment="Left"
+                                       Text="{Binding Discription}"
+                                       TextTrimming="CharacterEllipsis"
+                                       FontSize="{StaticResource RegularFont}"
+                                       Style="{StaticResource NormalTextBlockStyle}"/>
+
+                        </StackPanel>
+
+                        <!-- Follow -->
+                        <Button Width="120"
+                                Grid.Column="2"
+                                Margin="0 0 0 7"
+                                Height="35"
+                                Content="Following"
+                                Command="{Binding SubscribeCommand}"
+                                FontSize="{StaticResource MoreRegularFont}"
+                                Background="{Binding FollowBtnColor, 
+                            Converter={local:StringRGBToBrushConverter}}"/>
+
+                        <!-- Lower unfo -->
+                        <Grid Grid.Row="1"
+                              Margin="10"
+                              Grid.ColumnSpan="3">
+
+                            <!-- Initialize -->
+                            <Grid.ColumnDefinitions>
+
+                                <!-- Folowers -->
+                                <ColumnDefinition/>
+                                <!-- Images -->
+                                <ColumnDefinition/>
+                                <!-- Audio -->
+                                <ColumnDefinition/>
+                                <!-- Video -->
+                                <ColumnDefinition/>
+
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Folowers -->
+                            <TextBlock HorizontalAlignment="Center"
+                                       FontSize="{StaticResource RegularFont}">
+
+                                        <!-- Show Users int he group -->
+                                <TextBlock.InputBindings>
+
+                                    <MouseBinding MouseAction="LeftClick"
+                                                  Command="{Binding ShowUsersCommand}"/>
+
+                                </TextBlock.InputBindings>
+                                        
+                                        <Run Text="{Binding UserCount}"/>
+                                        <Run Text="Folowers"/>
+
+                            </TextBlock>
+
+                            <!-- Images -->
+                            <TextBlock Grid.Column="1"
+                                       HorizontalAlignment="Center"
+                                       FontSize="{StaticResource RegularFont}">
+                            
+                                        <Run Text="0"/>
+                                        <Run Text="Images"/>
+
+                            </TextBlock>
+
+                            <!-- Audio -->
+                            <TextBlock Grid.Column="2"
+                                       HorizontalAlignment="Center"
+                                       FontSize="{StaticResource RegularFont}">
+                            
+                                        <Run Text="0"/>
+                                        <Run Text="Audio"/>
+
+                            </TextBlock>
+
+
+                            <!-- Video -->
+                            <TextBlock Grid.Column="3"
+                                       HorizontalAlignment="Center"
+                                       FontSize="{StaticResource RegularFont}">
+                            
+                                        <Run Text="0"/>
+                                        <Run Text="Video"/>
+
+                            </TextBlock>
+
+                        </Grid>
+
+                    </Grid>
+
+                </Border>
+
+            </Grid>
+
+        </Grid>
+
+    </Border>
+
+</UserControl>

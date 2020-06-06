@@ -5,7 +5,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Smole"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
              DataContext="{Binding}">
 
     <UserControl.Resources>
@@ -26,9 +25,9 @@
                             <Border.BorderBrush>
 
                                 <LinearGradientBrush>
-                                    <GradientStop Color="{StaticResource WindowBlueColor}" Offset="0" />
+                                    <GradientStop Color="{StaticResource LightColor}" Offset="0" />
                                     <GradientStop Color="Black" Offset="0.5" />
-                                    <GradientStop Color="{StaticResource WindowBlueColor}" Offset="1" />
+                                    <GradientStop Color="{StaticResource LightColor}" Offset="1" />
                                 </LinearGradientBrush>
 
                             </Border.BorderBrush>
@@ -87,9 +86,9 @@
 
                                         <!-- Message -->
                                         <TextBlock Text="{Binding Discription}"
-                                               Padding="0 2 0 0"
-                                               Foreground="LightGray"
-                                               TextTrimming="CharacterEllipsis"/>
+                                                   Margin="0 -3 0 0"
+                                                   Foreground="White"
+                                                   TextTrimming="CharacterEllipsis"/>
 
                                     </StackPanel>
 
@@ -108,7 +107,7 @@
 
                                     <Storyboard>
 
-                                        <ColorAnimation To="{StaticResource WindowMoreBlueColor}" 
+                                        <ColorAnimation To="{StaticResource MoreLightColor}" 
                                                     Duration="0:0:0" 
                                                     Storyboard.TargetName="container" 
                                                     Storyboard.TargetProperty="Background.Color" />
@@ -125,7 +124,7 @@
 
                                     <Storyboard>
 
-                                        <ColorAnimation From="{StaticResource WindowMoreBlueColor}"
+                                        <ColorAnimation From="{StaticResource MoreLightColor}"
                                                     Duration="0:0:0" 
                                                     Storyboard.TargetName="container" 
                                                     Storyboard.TargetProperty="Background.Color"/>
@@ -138,7 +137,6 @@
                         </ControlTemplate.Triggers>
 
                     </ControlTemplate>
-
 
                 </Setter.Value>
 
