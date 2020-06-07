@@ -20,12 +20,6 @@ namespace Smole.Core
             = new ObservableCollection<GroupItemListViewModel>();
 
         /// <summary>
-        /// All post in the group
-        /// </summary>
-        public ObservableCollection<GroupViewModel> Posts { get; set; }
-            = new ObservableCollection<GroupViewModel>();
-
-        /// <summary>
         /// Text changed when we want to show our or all groups
         /// </summary>
         public string FilterText { get; set; } = "All groups";

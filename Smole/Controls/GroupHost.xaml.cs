@@ -83,8 +83,8 @@ namespace Smole
             if (newGroupFrame.Content is BaseGroup group)
             {
                 // Just update the view model
-                group.ViewModelObject = currentGroupViewModel;
-
+                group.ViewModelObject = currentGroupViewModel; 
+                
                 return value;
             }
 

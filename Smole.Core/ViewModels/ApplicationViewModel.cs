@@ -40,6 +40,11 @@
         public bool ShowBubble { get; set; } = true;
 
         /// <summary>
+        /// Flag which help to resize group
+        /// </summary>
+        public bool ResizeGroup { get; set; }
+
+        /// <summary>
         /// Flag which help to show groups
         /// </summary>
         public bool HasGroup { get; set; }

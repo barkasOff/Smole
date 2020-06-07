@@ -94,8 +94,9 @@
             Source={x:Static local:ViewModelLocator.Instance}}"
             CurrentGroupViewModel="{Binding ApplicationViewModel.GroupVM,
             Source={x:Static local:ViewModelLocator.Instance}}"
-            local:AnimateFadeInPropertyGroups.Value="{Binding ApplicationViewModel.HasGroup,
-            Source={x:Static local:ViewModelLocator.Instance}}"/>
+            local:AnimateFadeInPropertyGroups.Value="{Binding ApplicationViewModel.ResizeGroup,
+            Source={x:Static local:ViewModelLocator.Instance},
+            Converter={local:BooleanInvertConverter}}"/>
 
         <!-- No choosen groups -->
         <TextBlock Text="&quot;N o&quot;    &quot;G r o u p s&quot;   &quot;H e r e&quot;"

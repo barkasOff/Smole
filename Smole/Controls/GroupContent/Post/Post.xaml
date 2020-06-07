@@ -95,6 +95,7 @@
                 </Grid>
 
                 <Button Content=". . ."
+                        Cursor="Hand"
                         Grid.Column="2"
                         Margin="0 0 10 0"
                         Foreground="LightGray"
@@ -112,11 +113,6 @@
                            TextWrapping="Wrap"
                            Text="{Binding PostMessage}"
                            FontSize="{StaticResource RegularFont}"/>
-
-                <Button Content="Test"
-                        Command="{Binding DeletePostCommand}"
-                        CommandParameter="{Binding 
-                            ElementName=TextOfPost}"/>
 
             </Grid>
 

@@ -6,7 +6,6 @@
       xmlns:local="clr-namespace:Smole"
       xmlns:core="clr-namespace:Smole.Core;assembly=Smole.Core"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
       Title="GroupPage">
 
     <!-- Main Content-->
@@ -29,6 +28,28 @@
 
         <local:Group Grid.Row="1"
             local:AnimateSlideInFromLeftProperty.Value="{Binding ApplicationViewModel.ShowGroupItems,
+            Source={x:Static local:ViewModelLocator.Instance}}"/>
+
+        <!-- To Group Big Button -->
+        <Button Content="◪"
+                Margin="15 0 0 0"
+                Panel.ZIndex="2"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left"
+                Style="{StaticResource MenuButtons}"
+                FontSize="{StaticResource MoreRegularFont}"
+                Command="{Binding ResizeGroupCommand}"
+                local:AnimateFadeInProperty.Value="{Binding ApplicationViewModel.ResizeGroup,
+                Source={x:Static local:ViewModelLocator.Instance}}"/>
+
+        <local:GroupHost
+            Grid.RowSpan="2"
+            Background="{StaticResource BackgroundBrush}"
+            CurrentGroup="{Binding ApplicationViewModel.CurrentGroup,
+            Source={x:Static local:ViewModelLocator.Instance}}"
+            CurrentGroupViewModel="{Binding ApplicationViewModel.GroupVM,
+            Source={x:Static local:ViewModelLocator.Instance}}"
+            local:AnimateFadeInProperty.Value="{Binding ApplicationViewModel.ResizeGroup,
             Source={x:Static local:ViewModelLocator.Instance}}"/>
 
     </Grid>

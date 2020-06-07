@@ -9,6 +9,12 @@ namespace Smole.Core
         #region Public Properties
 
         /// <summary>
+        /// All posts in the group
+        /// </summary>
+        public ObservableCollection<PostViewModel> Posts { get; set; }
+            = new ObservableCollection<PostViewModel>();
+
+        /// <summary>
         /// Text from textbox to communicate
         /// </summary>
         public string SearchGroup { get; set; }
@@ -22,6 +28,11 @@ namespace Smole.Core
         /// If we subscribe to the group, btn color changes to gray
         /// </summary>
         public string FollowBtnColor { get; set; } = "ffaa00";
+
+        /// <summary>
+        /// Post text from textbox
+        /// </summary>
+        public string NewPostMessage { get; set; } = "";
 
         /// <summary>
         /// All Users in the group
@@ -64,6 +75,11 @@ namespace Smole.Core
         #region Commands
 
         /// <summary>
+        /// Add Post to the group Command
+        /// </summary>
+        public ICommand AddPostCommand { get; set; }
+
+        /// <summary>
         /// Open Group
         /// </summary>
         public ICommand OpenGroupCommand { get; set; }
@@ -92,6 +108,7 @@ namespace Smole.Core
         /// </summary>
         public GroupItemListViewModel()
         {
+            AddPostCommand = new RelayCommand(AddPostMethod);
             HomeCommand = new RelayCommand(HomeMethod);
             OpenGroupCommand = new RelayCommand(OpenGroupMethod);
             FindGroupCommand = new RelayCommand(FindGroupMethod);
@@ -101,6 +118,23 @@ namespace Smole.Core
         #endregion
 
         #region Methods
+
+        /// <summary>
+        /// Add post
+        /// </summary>
+        private void AddPostMethod()
+        {
+            Posts.Add(new PostViewModel
+            {
+                Name = this.Name,
+                ProfilePictureRGB = this.ProfilePictureRGB,
+                Initials = this.Initials,
+                PostMessage = NewPostMessage,
+                NewPost = true
+            });
+
+            NewPostMessage = "";
+        }
 
         /// <summary>
         /// Open group
@@ -120,8 +154,14 @@ namespace Smole.Core
         /// <summary>
         /// Resize group
         /// </summary>
-        private void ResizeGroupMethod() =>
-            IoC.Application.ShowGroupItems ^= true;
+        private void ResizeGroupMethod()
+        {
+            if (IoC.Application.HasGroup != true)
+                return;
+
+
+            IoC.Application.ResizeGroup ^= true;
+        }
 
         /// <summary>
         /// Search a group in the SN

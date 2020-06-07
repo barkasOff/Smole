@@ -69,12 +69,13 @@
 
             <!-- Setting Control -->
             <local:SettingControl 
-                Panel.ZIndex="1"
+                Panel.ZIndex="3"
                 local:AnimateSlideInFromBottomProperty.Value="{Binding ApplicationViewModel.SettingVisible,
                 Source={x:Static local:ViewModelLocator.Instance}}"/>
 
             <!-- Main Pages -->
             <local:PageHost
+                Panel.ZIndex="1"
                 CurrentPage="{Binding ApplicationViewModel.CurrentPage,
                 Source={x:Static local:ViewModelLocator.Instance}}"
                 CurrentPageViewModel="{Binding ApplicationViewModel.PageVM,

@@ -1,4 +1,4 @@
-﻿<local:BaseGroup x:TypeArguments="core:GroupItemListViewModel" x:Class="Smole.GroupView"
+﻿<local:BaseGroup x:TypeArguments="core:GroupViewModel" x:Class="Smole.GroupView"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -11,7 +11,9 @@
     <Grid>
 
         <!-- Main Pages -->
-        <local:GroupControl/>
+        <local:GroupControl 
+            local:AnimateFadeInProperty.Value="{Binding ApplicationViewModel.HasGroup,
+            Source={x:Static local:ViewModelLocator.Instance}}"/>
 
     </Grid>
     
