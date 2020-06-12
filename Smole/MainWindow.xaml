@@ -1,85 +1,75 @@
-﻿<Window x:Class="Smole.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Smole"
-        mc:Ignorable="d"
-        
-        x:Name="AppWindow"
-        WindowStyle="None"
-        AllowsTransparency="True"
-        WindowStartupLocation="CenterScreen"
-        
-        Icon="/Images/Icons/AppIcon.ico"
-        Title="borovNetwork"
-        
-        Activated="AppWindow_Activated"
-        Deactivated="AppWindow_Deactivated"
-        
-        Height="600" Width="800"
-        MinHeight="{Binding WindowMinimumHeight}" 
-        MinWidth="{Binding WindowMinimumWidth}">
+﻿<Window
+    x:Class="Smole.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Smole"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="AppWindow"
+    Title="borovNetwork"
+    Width="800"
+    Height="600"
+    MinWidth="{Binding WindowMinimumWidth}"
+    MinHeight="{Binding WindowMinimumHeight}"
+    Activated="AppWindow_Activated"
+    AllowsTransparency="True"
+    Deactivated="AppWindow_Deactivated"
+    Icon="/Images/Icons/AppIcon.ico"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
 
-    <!-- For Base Window Capabilities -->
+    <!--  For Base Window Capabilities  -->
     <WindowChrome.WindowChrome>
 
-        <WindowChrome 
-            ResizeBorderThickness="{Binding ResizeBorderThickness}"
+        <WindowChrome
             CaptionHeight="{Binding TitleHeight}"
             CornerRadius="0"
-            GlassFrameThickness="0"/>
+            GlassFrameThickness="0"
+            ResizeBorderThickness="{Binding ResizeBorderThickness}" />
 
     </WindowChrome.WindowChrome>
 
-    <!-- Main Border of the app -->
+    <!--  Main Border of the app  -->
     <Border Background="{StaticResource BackgroundBrush}">
 
-        <!-- Main Content -->
+        <!--  Main Content  -->
         <Grid>
 
-            <!-- Background Image -->
+            <!--  Background Image  -->
             <Grid.Background>
 
-                <!-- Image Source -->
-                <ImageBrush TileMode="Tile"
-                            ViewportUnits="Absolute"
-                            Viewport="0 0 500 500"
-                            ImageSource="/Images/Base/background.png"/>
+                <!--  Image Source  -->
+                <ImageBrush
+                    ImageSource="/Images/Base/background.png"
+                    TileMode="Tile"
+                    Viewport="0 0 500 500"
+                    ViewportUnits="Absolute" />
 
             </Grid.Background>
 
-            <!-- Dimmed Overlay -->
-            <Border Opacity="0.3"
-                    Grid.RowSpan="2"
-                    Panel.ZIndex="4">
+            <!--  Dimmed Overlay  -->
+            <Border
+                Grid.RowSpan="2"
+                Panel.ZIndex="4"
+                Opacity="0.3">
 
-                <!-- Dimmed Overlay BackRound -->
-                <Border Background="Black"
-                        local:AnimateFadeInPropertyOverlay.Value="{Binding ApplicationViewModel.DimmebleOverlayVisible,
-                    Source={x:Static local:ViewModelLocator.Instance}}"/>
+                <!--  Dimmed Overlay BackRound  -->
+                <Border local:AnimateFadeInPropertyOverlay.Value="{Binding ApplicationViewModel.DimmebleOverlayVisible, Source={x:Static local:ViewModelLocator.Instance}}" Background="Black" />
 
             </Border>
 
-            <!-- Slide Menu to see sections -->
-            <local:HamburgerControl
-                Panel.ZIndex="5"
-                local:AnimateSlideInFromLeftPropertyHamg.Value="{Binding ApplicationViewModel.SideMenuVisible,
-                Source={x:Static local:ViewModelLocator.Instance}}"/>
+            <!--  Slide Menu to see sections  -->
+            <local:HamburgerControl Panel.ZIndex="5" local:AnimateSlideInFromLeftPropertyHamg.Value="{Binding ApplicationViewModel.SideMenuVisible, Source={x:Static local:ViewModelLocator.Instance}}" />
 
-            <!-- Setting Control -->
-            <local:SettingControl 
-                Panel.ZIndex="3"
-                local:AnimateSlideInFromBottomProperty.Value="{Binding ApplicationViewModel.SettingVisible,
-                Source={x:Static local:ViewModelLocator.Instance}}"/>
+            <!--  Setting Control  -->
+            <local:SettingControl Panel.ZIndex="3" local:AnimateSlideInFromBottomProperty.Value="{Binding ApplicationViewModel.SettingVisible, Source={x:Static local:ViewModelLocator.Instance}}" />
 
-            <!-- Main Pages -->
+            <!--  Main Pages  -->
             <local:PageHost
                 Panel.ZIndex="1"
-                CurrentPage="{Binding ApplicationViewModel.CurrentPage,
-                Source={x:Static local:ViewModelLocator.Instance}}"
-                CurrentPageViewModel="{Binding ApplicationViewModel.PageVM,
-                Source={x:Static local:ViewModelLocator.Instance}}"/>
+                CurrentPage="{Binding ApplicationViewModel.CurrentPage, Source={x:Static local:ViewModelLocator.Instance}}"
+                CurrentPageViewModel="{Binding ApplicationViewModel.PageVM, Source={x:Static local:ViewModelLocator.Instance}}" />
 
         </Grid>
 

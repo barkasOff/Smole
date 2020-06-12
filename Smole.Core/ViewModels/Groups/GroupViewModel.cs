@@ -61,11 +61,14 @@ namespace Smole.Core
             ShowBubbleCommand = new RelayCommand(ShowBubbleMethod);
             FilterCommand = new RelayCommand(FilterMethod);
 
-            Group borov = new Group
+            UsersInGroups borov = new UsersInGroups
             {
-                Name = "B o r o v",
-                Initials = "BV",
-                ProfilePictureRGB = "ff4"
+                Group = new Group
+                {
+                    Name = "B o r o v",
+                    Initials = "BV",
+                    ProfilePictureRGB = "ff4"
+                }
             };
 
             Groups.Add(GroupInitialize(borov));
@@ -107,15 +110,15 @@ namespace Smole.Core
         /// </summary>
         /// <param name="group"> Take group </param>
         /// <returns> Convert group </returns>
-        public GroupItemListViewModel GroupInitialize(Group group) =>
+        public GroupItemListViewModel GroupInitialize(UsersInGroups group) =>
              new GroupItemListViewModel
              {
-                 Initials = group.Initials,
-                 Discription = group.Discription,
-                 ProfilePictureRGB = group.ProfilePictureRGB,
-                 Name = group.Name,
-                 FollowBtnColor = group.FollowBtnColor,
-                 UserCount = group.UserCount,
+                 Initials = group.Group.Initials,
+                 Discription = group.Group.Discription,
+                 ProfilePictureRGB = group.Group.ProfilePictureRGB,
+                 Name = group.Group.Name,
+                 FollowBtnColor = group.Group.FollowBtnColor,
+                 UserCount = group.Group.UserCount,
                  NewGroup = true
              };
 

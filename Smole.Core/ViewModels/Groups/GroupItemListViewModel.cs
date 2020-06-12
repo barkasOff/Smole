@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Input;
 
 namespace Smole.Core
@@ -11,7 +11,7 @@ namespace Smole.Core
         /// <summary>
         /// All posts in the group
         /// </summary>
-        public ObservableCollection<PostViewModel> Posts { get; set; }
+        public static ObservableCollection<PostViewModel> Posts { get; set; }
             = new ObservableCollection<PostViewModel>();
 
         /// <summary>
@@ -80,6 +80,16 @@ namespace Smole.Core
         public ICommand AddPostCommand { get; set; }
 
         /// <summary>
+        /// Add Post to the group Command
+        /// </summary>
+        public ICommand DeletePostCommand { get; set; }
+
+        /// <summary>
+        /// Add Post to the group Command
+        /// </summary>
+        public ICommand EditPostCommand { get; set; }
+
+        /// <summary>
         /// Open Group
         /// </summary>
         public ICommand OpenGroupCommand { get; set; }
@@ -109,10 +119,13 @@ namespace Smole.Core
         public GroupItemListViewModel()
         {
             AddPostCommand = new RelayCommand(AddPostMethod);
+            DeletePostCommand = new RelayCommand(DeletePostMethod);
+            EditPostCommand = new RelayCommand(EditPostMethod);
             HomeCommand = new RelayCommand(HomeMethod);
             OpenGroupCommand = new RelayCommand(OpenGroupMethod);
             FindGroupCommand = new RelayCommand(FindGroupMethod);
             ResizeGroupCommand = new RelayCommand(ResizeGroupMethod);
+
         }
 
         #endregion
@@ -134,6 +147,24 @@ namespace Smole.Core
             });
 
             NewPostMessage = "";
+        }
+
+        /// <summary>
+        /// Edit post
+        /// </summary>
+        private void EditPostMethod()
+        {
+            var post = Posts?.FirstOrDefault(p => p.PostMessage == "Test");
+
+            post.PostMessage = "Hello";
+        }
+
+        /// <summary>
+        /// Delete post
+        /// </summary>
+        private void DeletePostMethod()
+        {
+            Posts.Remove(Posts.FirstOrDefault(p => p.Id == 0));
         }
 
         /// <summary>
@@ -169,7 +200,7 @@ namespace Smole.Core
         private void FindGroupMethod()
         {
             foreach (var group in IoC.Base.Groups)
-                if (SearchGroup == group.Name)
+                if (SearchGroup == group.Group.Name)
                 {
                     IoC.UI.ShowMessage(new MessageBoxDialogViewModel { Message = "Was found!!" });
 

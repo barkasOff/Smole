@@ -52,16 +52,6 @@ namespace Smole.Core
         /// </summary>
         public ICommand ShowPostSettingCommand { get; set; }
 
-        /// <summary>
-        /// Add Post to the group Command
-        /// </summary>
-        public ICommand DeletePostCommand { get; set; }
-
-        /// <summary>
-        /// Add Post to the group Command
-        /// </summary>
-        public ICommand EditPostCommand { get; set; }
-
         #endregion
 
         #region Constructor
@@ -71,8 +61,6 @@ namespace Smole.Core
         /// </summary>
         public PostViewModel()
         {
-            DeletePostCommand = new RelayCommand(DeletePostMethod);
-            EditPostCommand = new RelayCommand(EditPostMethod);
             ShowPostSettingCommand = new RelayCommand(ShowPostSettingMethod);
         }
 
@@ -85,22 +73,6 @@ namespace Smole.Core
         /// </summary>
         private void ShowPostSettingMethod() =>
             ShowPostSetting ^= true;
-
-        /// <summary>
-        /// Edit post
-        /// </summary>
-        private void EditPostMethod()
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Delete post
-        /// </summary>
-        private void DeletePostMethod()
-        {
-            throw new NotImplementedException();
-        }
 
         #endregion
     }

@@ -34,7 +34,7 @@ namespace Smole.Core
         /// <summary>
         /// All Groups in the SN
         /// </summary>
-        public List<Group> Groups { get; set; } = new List<Group>();
+        public List<UsersInGroups> Groups { get; set; } = new List<UsersInGroups>();
 
         #endregion
 

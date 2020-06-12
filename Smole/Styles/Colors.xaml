@@ -1,54 +1,55 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:Smole">
-    
-    <!-- Colors of the app -->
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Smole">
+
+    <!--  Colors of the app  -->
     <Color x:Key="LightColor">#e8e8e8</Color>
-    <SolidColorBrush x:Key="LightBrush" Color="{StaticResource LightColor}"/>
+    <SolidColorBrush x:Key="LightBrush" Color="{StaticResource LightColor}" />
 
     <Color x:Key="LessLightColor">#8f8f8f</Color>
-    <SolidColorBrush x:Key="LessLightBrush" Color="{StaticResource LessLightColor}"/>
+    <SolidColorBrush x:Key="LessLightBrush" Color="{StaticResource LessLightColor}" />
 
     <Color x:Key="BackgroundColor">#cccccc</Color>
-    <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}"/>
+    <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}" />
 
     <Color x:Key="BackAppButtonColor">#057FD9</Color>
-    <SolidColorBrush x:Key="BackAppButtonBrush" Color="{StaticResource BackAppButtonColor}"/>
+    <SolidColorBrush x:Key="BackAppButtonBrush" Color="{StaticResource BackAppButtonColor}" />
 
     <Color x:Key="MoreBackAppButtonColor">#0586e6</Color>
-    <SolidColorBrush x:Key="MoreBackAppButtonBrush" Color="{StaticResource MoreBackAppButtonColor}"/>
+    <SolidColorBrush x:Key="MoreBackAppButtonBrush" Color="{StaticResource MoreBackAppButtonColor}" />
 
     <Color x:Key="WindowBlueColor">#3b92d4</Color>
-    <SolidColorBrush x:Key="WindowBlueBrush" Color="{StaticResource WindowBlueColor}"/>
+    <SolidColorBrush x:Key="WindowBlueBrush" Color="{StaticResource WindowBlueColor}" />
 
     <Color x:Key="WindowMoreBlueColor">#409ce3</Color>
-    <SolidColorBrush x:Key="WindowMoreBlueBrush" Color="{StaticResource WindowMoreBlueColor}"/>
+    <SolidColorBrush x:Key="WindowMoreBlueBrush" Color="{StaticResource WindowMoreBlueColor}" />
 
     <Color x:Key="WindowMoreMoreBlueColor">#41a3f0</Color>
-    <SolidColorBrush x:Key="WindowMoreMoreBlueBrush" Color="{StaticResource WindowMoreMoreBlueColor}"/>
+    <SolidColorBrush x:Key="WindowMoreMoreBlueBrush" Color="{StaticResource WindowMoreMoreBlueColor}" />
 
     <Color x:Key="MoreLightColor">#d1d1d1</Color>
-    <SolidColorBrush x:Key="MoreLightBrush" Color="{StaticResource MoreLightColor}"/>
+    <SolidColorBrush x:Key="MoreLightBrush" Color="{StaticResource MoreLightColor}" />
 
     <Color x:Key="MoreMoreLightColor">#c4c4c4</Color>
-    <SolidColorBrush x:Key="MoreMoreLightBrush" Color="{StaticResource MoreMoreLightColor}"/>
+    <SolidColorBrush x:Key="MoreMoreLightBrush" Color="{StaticResource MoreMoreLightColor}" />
 
     <Color x:Key="OrangeColor">#ffaa00</Color>
-    <SolidColorBrush x:Key="OrangeBrush" Color="{StaticResource OrangeColor}"/>
+    <SolidColorBrush x:Key="OrangeBrush" Color="{StaticResource OrangeColor}" />
 
     <Color x:Key="LightOrangeColor">#ffbf00</Color>
-    <SolidColorBrush x:Key="LightOrangeBrush" Color="{StaticResource LightOrangeColor}"/>
+    <SolidColorBrush x:Key="LightOrangeBrush" Color="{StaticResource LightOrangeColor}" />
 
     <Color x:Key="Red">#ff4747</Color>
     <SolidColorBrush x:Key="RedBrush" Color="{StaticResource Red}" />
 
     <Color x:Key="Green">#00c541</Color>
     <SolidColorBrush x:Key="GreenBrush" Color="{StaticResource Green}" />
-    
+
     <Color x:Key="CloseRedColor">#eb4034</Color>
-    <SolidColorBrush x:Key="CloseRedBrush" Color="{StaticResource CloseRedColor}"/>
+    <SolidColorBrush x:Key="CloseRedBrush" Color="{StaticResource CloseRedColor}" />
 
     <Color x:Key="DarkColor">#5e5e5e</Color>
-    <SolidColorBrush x:Key="DarkBrush" Color="{StaticResource DarkColor}"/>
+    <SolidColorBrush x:Key="DarkBrush" Color="{StaticResource DarkColor}" />
 
 </ResourceDictionary>

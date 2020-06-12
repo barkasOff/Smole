@@ -4,13 +4,26 @@ namespace Smole.Core
 {
     public class Group
     {
-        // Name Of Our Group
+        #region Public Properties
+
+        /// <summary>
+        /// All groups the user is subscribed to
+        /// </summary>
+        public List<UsersInGroups> Users { get; set; }
+
+        /// <summary>
+        /// Name Of Our Group
+        /// </summary>
         public string Name { get; set; }
 
-        // The latest message from this chat
+        /// <summary>
+        /// The latest message from this chat
+        /// </summary>
         public string Discription { get; set; } = "Welcome to may group!";
 
-        // The initials to show for the profile picture background
+        /// <summary>
+        /// The initials to show for the profile picture background
+        /// </summary>
         public string Initials { get; set; }
 
         /// <summary>
@@ -19,10 +32,14 @@ namespace Smole.Core
         /// </summary>
         public string ProfilePictureRGB { get; set; }
 
-        // Users Current Count
+        /// <summary>
+        /// Users Current Count
+        /// </summary>
         public int UserCount { get; set; }
 
-        // Current Image of the group
+        /// <summary>
+        /// Current Image of the group
+        /// </summary>
         public string CurrentPageImage { get; set; }
 
         /// <summary>
@@ -30,19 +47,26 @@ namespace Smole.Core
         /// </summary>
         public string FollowBtnColor { get; set; } = "ffaa00";
 
-        // All Images of the group
+        /// <summary>
+        /// All Images of the group
+        /// </summary>
         public List<string> GroupImages { get; set; } = new List<string>();
 
-        // All Posts of the group
+        /// <summary>
+        /// All Posts of the group
+        /// </summary>
         public List<Post> Posts { get; set; } = new List<Post>();
 
-        // All Posts of the group
-        public List<User> Users { get; set; } = new List<User>();
-
-        // All Audios of the group
+        /// <summary>
+        /// All Audios of the group
+        /// </summary>
         public List<string> Audios { get; set; } = new List<string>();
 
-        // All Videos of the group
-        public List<string> Videos { get; set; } = new List<string>();
+        /// <summary>
+        /// All Videos of the group
+        /// </summary>
+        public List<string> Videos { get; set; } = new List<string>(); 
+
+        #endregion
     }
 }

@@ -41,9 +41,9 @@
         /// </summary>
         public static bool userInGroup(User user, Group group)
         {
-            foreach (User us in group.Users)
+            foreach (var us in group.Users)
             {
-                if (us.UserName == user.UserName)
+                if (us.User.UserName == user.UserName)
                     return true;
             }
 

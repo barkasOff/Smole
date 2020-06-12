@@ -13,7 +13,7 @@
             Padding="0 5"
             Height="Auto"
             CornerRadius="10"
-            Background="White">
+            Background="{StaticResource LightBrush}">
 
         <!-- Shadow -->
         <Border.Effect>
@@ -34,7 +34,7 @@
                   Margin="15 -2 15 0"
                   Data="M 0,0 L 10,-10 L 20,0 L 0,0" 
                   StrokeThickness="0"
-                  Fill="White"/>
+                  Fill="{StaticResource LightBrush}"/>
 
             <!-- Buttons -->
             <StackPanel>
@@ -60,7 +60,7 @@
 
                                 <Storyboard>
 
-                                    <ColorAnimation To="LightGray" 
+                                    <ColorAnimation To="{StaticResource MoreLightColor}" 
                                                     Duration="0:0:0" 
                                                     Storyboard.TargetProperty="Background.Color"/>
 
@@ -78,8 +78,8 @@
                                 <Storyboard>
 
                                     <ColorAnimation To="Transparent" 
-                                                Duration="0:0:0" 
-                                                Storyboard.TargetProperty="Background.Color"/>
+                                                    Duration="0:0:0" 
+                                                    Storyboard.TargetProperty="Background.Color"/>
 
                                 </Storyboard>
 
